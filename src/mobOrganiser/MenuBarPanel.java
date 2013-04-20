@@ -3,6 +3,7 @@ package mobOrganiser;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
@@ -15,9 +16,9 @@ public class MenuBarPanel extends JPanel {
 	
 	public MenuBarPanel()
 	{
-		calendarButton = new JButton("C");
-		todayButton = new JButton("T");
-		contactsButton = new JButton("C");
+		calendarButton = new JButton(new ImageIcon("calendarButton.png"));
+		todayButton = new JButton(new ImageIcon("todayButton.png"));
+		contactsButton = new JButton(new ImageIcon("contactsButton.png"));
 		intialiseComponents();
 	}
 	

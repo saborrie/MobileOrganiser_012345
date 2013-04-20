@@ -5,6 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SpringLayout;
 
 public class MainWindow extends JFrame 
 {
@@ -17,11 +18,23 @@ public class MainWindow extends JFrame
 	public void initialiseComponents()
 	{
 		MenuBarPanel menuBar = new MenuBarPanel();
+		SpringLayout layout = new SpringLayout();
+		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setPreferredSize(new Dimension(200,280));
 		
+		
+		//adds
 		mainPanel.add(menuBar, BorderLayout.NORTH);
+		
 		add(mainPanel);
+		
+		
+		//layout stuff
+		mainPanel.setLayout(layout);
+		layout.putConstraint(SpringLayout.NORTH, menuBar, 0, SpringLayout.NORTH, mainPanel);
+		
+		setResizable(false);
 	}
 	
 	public void setMainFrameVisible(MainWindow window)
