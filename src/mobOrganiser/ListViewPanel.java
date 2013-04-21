@@ -16,8 +16,12 @@ import javax.swing.SpringLayout;
 
 public class ListViewPanel extends ContentPanel {
 	
+<<<<<<< HEAD
 	JList<OrganiserEntry> list;
 	DefaultListModel<OrganiserEntry> listModel;
+=======
+	JList list;
+>>>>>>> Set up view for ThoughtOfTheDay panel
 	SpringLayout layout;
 	private JScrollPane scrollPane;
 	
@@ -49,6 +53,7 @@ public class ListViewPanel extends ContentPanel {
 	
 	private void initialiseComponents(){
 		
+<<<<<<< HEAD
 		list = new JList<OrganiserEntry>();
 		listModel = new DefaultListModel<OrganiserEntry>();
 		list.setModel(listModel);
@@ -56,6 +61,11 @@ public class ListViewPanel extends ContentPanel {
 		scrollPane = new JScrollPane(list);
 		add(scrollPane);
 		scrollPane.setPreferredSize(new Dimension(200,280-75));
+=======
+		list = new JList();
+		add(list);
+		list.setPreferredSize(new Dimension(200,280-35-35));
+>>>>>>> Set up view for ThoughtOfTheDay panel
 	}
 	
 	private void layoutComponents(){

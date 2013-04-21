@@ -1,5 +1,5 @@
 package mobOrganiser;
 
-public class Event extends Note {
-
+public class Event extends Note{
+	
 }
