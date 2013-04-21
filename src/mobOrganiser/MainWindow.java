@@ -26,9 +26,8 @@ public class MainWindow extends JFrame
 		//makes the default screen when you enter the app the thought of the day
 		contentPanel = new ThoughtOfTheDayPanel();
 		
-		
 		//initialises the main panel, the opaque container that jframes require
-		mainPanel = new JPanel();
+		mainPanel = new JPanel(); 
 		
 		//this is the size of the whole app
 		mainPanel.setPreferredSize(new Dimension(200,280));

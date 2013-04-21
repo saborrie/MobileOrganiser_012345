@@ -1,5 +1,5 @@
 package mobOrganiser;
 
-public class Contact extends DataObject {
+public class Contact extends OrganiserEntry {
 
 }

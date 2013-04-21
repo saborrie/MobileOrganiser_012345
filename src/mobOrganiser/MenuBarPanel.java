@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -36,7 +37,7 @@ public class MenuBarPanel extends JPanel {
 					window.setContentPanel(new MonthViewPanel());
 				}
 				else if (e.getSource().equals(todayButton)) {
-					window.setContentPanel(new ListViewPanel());
+					window.setContentPanel(new ListViewPanel(new Date()));
 				}
 				else if (e.getSource() == contactsButton) {
 					window.setContentPanel(new ListViewPanel());
@@ -58,7 +59,7 @@ public class MenuBarPanel extends JPanel {
 		Dimension dimension1 = new Dimension(66, 35);
 		Dimension dimension2 = new Dimension(68, 35);
 		
-		calendarButton.setPreferredSize(dimension1);
+		calendarButton.setPreferredSize(dimension1); 
 		todayButton.setPreferredSize(dimension2);
 		contactsButton.setPreferredSize(dimension1);
 		
