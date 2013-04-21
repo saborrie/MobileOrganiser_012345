@@ -2,6 +2,6 @@ package mobOrganiser;
 
 import javax.swing.JPanel;
 
-public class MonthViewPanel extends JPanel {
+public class MonthViewPanel extends ContentPanel {
 
 }
