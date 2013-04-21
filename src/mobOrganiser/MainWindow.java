@@ -18,6 +18,8 @@ public class MainWindow extends JFrame
 	public void initialiseComponents()
 	{
 		MenuBarPanel menuBar = new MenuBarPanel();
+		ContentPanel contentPanel = new ContentPanel();
+		
 		SpringLayout layout = new SpringLayout();
 		
 		JPanel mainPanel = new JPanel();
@@ -25,15 +27,15 @@ public class MainWindow extends JFrame
 		
 		
 		//adds
-		mainPanel.add(menuBar, BorderLayout.NORTH);
-		
+		mainPanel.add(menuBar);
+		mainPanel.add(contentPanel);
 		add(mainPanel);
 		
 		
 		//layout stuff
 		mainPanel.setLayout(layout);
 		layout.putConstraint(SpringLayout.NORTH, menuBar, 0, SpringLayout.NORTH, mainPanel);
-		
+		layout.putConstraint(SpringLayout.NORTH, contentPanel, 0, SpringLayout.SOUTH, menuBar);
 		setResizable(false);
 	}
 	
