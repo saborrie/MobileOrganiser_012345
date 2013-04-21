@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DataStore {
 		
@@ -31,6 +32,12 @@ public class DataStore {
 		return contacts;
 	}
 	
+	public static ArrayList<OrganiserEntry> getDayData(Date date){
+		ArrayList<OrganiserEntry> rv = (ArrayList<OrganiserEntry>) events.clone();
+		rv.addAll(notes);
+		return rv;
+	}
+	
 	
 	public static void readFile(){
 		
@@ -45,14 +52,26 @@ public class DataStore {
 		
 		try{
 			contactsIn = new BufferedReader(new FileReader(contactsPath));
+			notesIn = new BufferedReader(new FileReader(notesPath));
+			eventsIn = new BufferedReader(new FileReader(eventsPath));
 			
 			String line;
 			
 			while((line = contactsIn.readLine()) != null) {
 				contacts.add(new Contact(line));
 			}
+			while((line = notesIn.readLine()) != null) {
+				notes.add(new Contact(line));
+			}
+			while((line = eventsIn.readLine()) != null) {
+				events.add(new Contact(line));
+			}
+			
+			
 			
 			contactsIn.close();
+			notesIn.close();
+			eventsIn.close();
 			
 		} catch(IOException e) {
 			

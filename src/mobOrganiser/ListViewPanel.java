@@ -30,6 +30,8 @@ public class ListViewPanel extends ContentPanel {
 	
 	public ListViewPanel(Date date) {
 		initialiseComponents();
+		DataStore.readFile();
+		insertList(DataStore.getDayData(date));
 	}
 	
 	private void insertList(ArrayList<OrganiserEntry> arrayList) {
@@ -46,8 +48,6 @@ public class ListViewPanel extends ContentPanel {
 	
 	
 	private void initialiseComponents(){
-		
-		setBackground(Color.blue);
 		
 		list = new JList<OrganiserEntry>();
 		listModel = new DefaultListModel<OrganiserEntry>();
