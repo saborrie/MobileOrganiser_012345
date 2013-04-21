@@ -2,6 +2,8 @@ package mobOrganiser;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,9 +15,11 @@ public class MenuBarPanel extends JPanel {
 	private JButton calendarButton;
 	private JButton todayButton;
 	private JButton contactsButton;
+	private MainWindow window;
 	
-	public MenuBarPanel()
+	public MenuBarPanel(MainWindow window)
 	{
+		this.window = window;
 		calendarButton = new JButton(new ImageIcon("calendarButton.png"));
 		todayButton = new JButton(new ImageIcon("todayButton.png"));
 		contactsButton = new JButton(new ImageIcon("contactsButton.png"));
@@ -24,8 +28,25 @@ public class MenuBarPanel extends JPanel {
 	
 	public void intialiseComponents()
 	{	
+		ActionListener actionListener = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource().equals(calendarButton)) {
+					window.setContentPanel(new MonthViewPanel());
+				}
+				else if (e.getSource().equals(todayButton)) {
+					window.setContentPanel(new ListViewPanel());
+				}
+				else if (e.getSource() == contactsButton) {
+					window.setContentPanel(new ListViewPanel());
+				}
+				
+			}
+		};
+		
+		
 		SpringLayout layout = new SpringLayout();
-		//setLayout(new GridLayout(1,3));
 		setLayout(layout);
 		
 		setPreferredSize(new Dimension(200,35));
@@ -40,6 +61,11 @@ public class MenuBarPanel extends JPanel {
 		calendarButton.setPreferredSize(dimension1);
 		todayButton.setPreferredSize(dimension2);
 		contactsButton.setPreferredSize(dimension1);
+		
+		calendarButton.addActionListener(actionListener);
+		todayButton.addActionListener(actionListener);
+		contactsButton.addActionListener(actionListener);
+		
 		
 		
 		//align all 3 buttons with the top of this panel.
