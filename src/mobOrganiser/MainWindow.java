@@ -20,7 +20,7 @@ public class MainWindow extends JFrame
 	}
 	
 	public void initialiseComponents()
-	{
+	{	
 		menuBar = new MenuBarPanel(this);
 		
 		//makes the default screen when you enter the app the thought of the day
