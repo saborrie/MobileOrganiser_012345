@@ -32,6 +32,7 @@ public class ThoughtOfTheDayPanel extends ContentPanel {
 	}
 	
 	public void setUpTextFormat(){
+		//Sets text to wrap for width of label
 		labelText = "If our house be on fire, without inquiring whether it was fired from within or without, we must try to extinguish it. -Thomas Jefferson.";
 		labelText = String.format("<html><div WIDTH=%d>%s</div><html>", 200, labelText);
 	}
@@ -39,7 +40,6 @@ public class ThoughtOfTheDayPanel extends ContentPanel {
 	public void layoutComponents(){
 		layout = new SpringLayout();
 		this.setLayout(layout);
-		//TODO: Add label to whole panel so it fits
 		layout.putConstraint(SpringLayout.SOUTH, swapButton, 0, SpringLayout.SOUTH, this);
 		layout.putConstraint(SpringLayout.NORTH, thoughtOfTheDay, 0, SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, thoughtOfTheDay, 5, SpringLayout.HORIZONTAL_CENTER, this);
